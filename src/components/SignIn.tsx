@@ -40,7 +40,7 @@ const SignIn = ({ register, setRegister } : Props) => {
                 />
                 <p className="text-blue-400 mb-2">Forgot Password?</p>
                 <button type="submit" className="w-full py-2 rounded-lg mb-2 bg-black hover:bg-slate-600 transition-all duration-200 ease-in text-white">Sign In</button>
-                <p className="mx-auto">Don't have an account? <a onClick={() => setRegister(!register)} className="text-blue-400" href="#">Register here</a></p>
+                <p className="mx-auto">Dont have an account? <a onClick={() => setRegister(!register)} className="text-blue-400" href="#">Register here</a></p>
             </form>
         </>
     )
