@@ -49,7 +49,7 @@ const Products = () => {
         <div className="flex flex-col justify-center">
             {LEGEND.map((legend, idx) => {
                 let color = COLORS[idx];
-                return <div className="max-[800px]:ml-8">
+                return <div className="max-[800px]:ml-8" key={idx}>
                     <h2 className="flex flex-row items-center"><span style={{ backgroundColor: `${color}`}} className="h-3 mr-2 w-3 block rounded-full"></span>{legend}</h2>
                     <p className="ml-4 font-light text-sm">{Math.round((pieData[idx].value * 100) / 1500) + "%"}</p>
                 </div>
