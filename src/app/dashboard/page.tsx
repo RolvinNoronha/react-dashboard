@@ -1,24 +1,30 @@
 "use client"
 
 import Activities from "@/components/Activities"
-import Data from "@/components/Data"
+import DashboardHeader from "../../components/DashboardHeader";
 import Products from "@/components/Products"
 import Schedule from "@/components/Schedule"
 import Sidebar from "@/components/Sidebar"
 import { useSession } from "next-auth/react"
 import { useRouter } from "next/navigation"
+import { useState } from "react";
+import HiddenSidebar from "@/components/HiddenSidebar";
 
 const Dashboard = () => {
-    const { data: session } = useSession()
+    const data = useSession()
+    console.log(data)
     const router = useRouter();
 
-    // if (!session) {
-    //     router.push("/");
-    // }
+    const [show, setShow] = useState<boolean>(false);
 
-    return <div className="bg-slate-300 h-screen gap-4 p-8 w-full grid grid-cols-5 grid-rows-4">
+    if (data.status === "unauthenticated") {
+        router.push("/");
+    }
+
+    return <div className="bg-slate-100 max-[800px]:h-full h-screen gap-6 p-4 w-full grid grid-cols-5 grid-rows-3 max-[900px]:flex max-[900px]:flex-col">
         <Sidebar />
-        <Data />
+        <DashboardHeader show={show} setShow={setShow} />
+        {show && <HiddenSidebar show={show} setShow={setShow} />}
         <Activities />
         <Products />
         <Schedule />
