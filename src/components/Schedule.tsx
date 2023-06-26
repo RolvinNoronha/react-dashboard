@@ -3,7 +3,7 @@ const Schedule = () => {
     return (
     <div className="bg-white col-start-4 col-end-6 p-6 rounded-3xl max-[1200px]:col-start-4 max-[1200px]:col-end-6">
         <div className="flex flex-row justify-between">
-            <h1 className="text-lg font-medium">Today's Schedule</h1>
+            <h1 className="text-lg font-medium">Todays Schedule</h1>
             <p className="text-xs font-light">{"See All >"}</p>
         </div>
         <div className="flex flex-col [&>*]:mb-2 p-6">
